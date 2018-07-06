@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Open+Sans&subset=latin-ext');
+
+:root {
+    --nunito: 'Nunito', sans-serif;
+    --open-sans: 'Open Sans', sans-serif;
+}
+
+/* GLOBAL */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    height: 100%;
+}
+
+/* BUTTONS */
+.btn {
+    background: linear-gradient(to right, #00FFBA, #8A0BDB);
+    border-radius: 50px;
+    color: white;
+    display: block;
+    font-family: var(--nunito);
+    font-size: 0.9rem;
+    padding: 1em 3em;
+    text-decoration: none;
+    position: relative;
+    z-index: 999;
+}
+
+.btn::before {
+    content: '';
+    display: block;
+    height: 80%;
+    width: 94%;
+    background: #000;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #8A0BDB;
+}
+
+.btn:hover::before {
+    background: #fff;
+}
+
+/* HEADER */
+header {
+    background: url("img/bridge.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    font-family: var(--nunito);
+    justify-content: space-between;
+    padding: 1em 4em;
+    width: 100%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 3.1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-list a {
+    color: #fff;
+    font-size: 1rem;
+    padding-left: 1.6em;
+    text-decoration: none;
+}
+
+.header-text {
+    margin: 4em 3em 3em 3em;
+    max-width: 600px;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-family: var(--nunito);
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+}
+
+.header-text h3 {
+    display: inline-block;
+    font-family: var(--open-sans);
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 300;
+    max-width: 80%;
+}
+
+.scroll-icon {
+    margin-top: 4em;
+    height: 30px;
+    width: 30px;
+}
+
+/

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="91px" viewBox="0 0 96 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>thin-0670_diamond_prize_award_jewellery_ring</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Picons" transform="translate(-1892.000000, -7767.000000)">
+            <g id="thin-0670_diamond_prize_award_jewellery_ring" transform="translate(1892.000000, 7760.000000)">
+                <g id="Group" transform="translate(0.000000, 8.000000)" stroke-width="4" stroke="#000000">
+                    <polygon id="Shape" points="47.9956 86.4356 93.0956 29.8856 75.7492 1.8928 47.9956 1.8928 20.242 1.8928 2.8952 29.8856"></polygon>
+                    <path d="M2.8952,29.8856 L93.0956,29.8856" id="Shape"></path>
+                    <polyline id="Shape" points="47.9956 1.8928 31.9112 29.8856 47.9956 86.4356"></polyline>
+                    <polyline id="Shape" points="47.9956 1.8928 64.08 29.8856 47.9956 86.4356"></polyline>
+                    <path d="M64.08,29.8856 L75.7492,1.8928" id="Shape"></path>
+                    <path d="M31.9112,29.8856 L20.242,1.8928" id="Shape"></path>
+                </g>
+                <rect id="Rectangle-path" x="0" y="3.9996" width="96" height="96"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
