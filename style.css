@@ -17,6 +17,19 @@ html, body {
     height: 100%;
 }
 
+.italic-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.title-font {
+    font-family: var(--nunito);
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
 /* BUTTONS */
 .btn {
     background: linear-gradient(to right, #00FFBA, #8A0BDB);
@@ -55,27 +68,30 @@ html, body {
 
 /* HEADER */
 header {
+    align-items: center;
     background: url("img/bridge.jpg");
     background-position: center;
     background-size: cover;
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 2em;
     width: 100%;
-    height: 100vh;
 }
 
 nav {
+    margin-top: 2em;
     align-items: center;
     display: flex;
     font-family: var(--nunito);
     justify-content: space-between;
-    padding: 1em 4em;
+    padding: 0 4em;
     width: 100%;
 }
 
 .logo {
+    display: inline-block;
     color: #fff;
     font-size: 3.1rem;
     font-weight: 500;
@@ -95,7 +111,7 @@ nav {
 }
 
 .header-text {
-    margin: 4em 3em 3em 3em;
+    margin: 6em 3em 3em 3em;
     max-width: 600px;
     text-align: center;
 }
@@ -117,9 +133,271 @@ nav {
 }
 
 .scroll-icon {
-    margin-top: 4em;
     height: 30px;
+    margin-top: 3em;
     width: 30px;
 }
 
-/
+/* WHAT WE DO SECTION */
+.our-offer {
+    display: flex;
+    margin: 0 auto;
+    padding: 2em 0 6em 0;
+    max-width: 1000px;
+}
+
+.skill {
+    display: flex;
+}
+
+.our-offer img {
+    max-width: 150px;
+    padding: 0 2em;
+}
+
+.skill-desc h3 {
+    font-family: var(--nunito);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    white-space: nowrap;
+}
+
+.skill-desc p {
+    font-family: var(--open-sans);
+    font-size: 0.8rem;
+}
+
+
+/* ABOUT US */
+.about-us {
+    font-family: var(--nunito);
+}
+
+.about-us img {
+    display: inline-block;
+    width: 50%;
+}
+
+.about-us-desc {
+    padding: 2em 5em 2em 5em;
+    float: right;
+    width: 50%;
+}
+
+.about-us p {
+    font-family: var(--open-sans);
+}
+
+.about-us-desc h6 {
+    margin-bottom: 1em;
+}
+
+.about-us-desc h6::before {
+    content: "";
+    display: block;
+    background: linear-gradient(to right, #00FFBA, #8A0BDB);
+    width: 50px;
+    height: 4px;
+    float: left;
+    margin-top: 0.5em;
+    margin-right: 1em;
+}
+
+.about-us-desc h3 {
+    margin-bottom: 0.5em;
+}
+
+.about-us-paragraph {
+    font-size: 0.8rem;
+    margin-bottom: 0.8em;
+}
+
+.our-skills {
+    width: 70%;
+}
+
+.our-skills h4 {
+    font-size: 1.2rem;
+    margin: 1em 0;
+    font-weight: 400;
+}
+
+.skill-o-meter {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.skill-o-meter:nth-child(2) {
+    width: 99%;
+}
+
+.skill-o-meter:nth-child(3) {
+    width: 70%;
+}
+
+.skill-o-meter:nth-child(4) {
+    width: 80%;
+}
+
+.skill-o-meter:nth-child(5) {
+    width: 60%;
+}
+
+.skill-o-meter::before {
+    content: "";
+    display: block;
+    background: linear-gradient(to right, #00FFBA, #8A0BDB);
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    top: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ANIMATIONS */
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1030px) {
+    .our-offer {
+        justify-content: space-around;
+    }
+
+    .skill {
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 25%;
+    }
+
+    .skill-desc h3 {
+        text-align: center;
+    }
+
+    .our-offer img {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 850px){
+    html{
+        font-size: 13px;
+    }
+
+    .header-text h3 {
+        font-size: 1rem;
+        min-width: 80%;
+    }
+
+    .skill-desc p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 670px){
+    html{
+        font-size: 10px;
+    }
+
+    .header-text {
+        width: 65%;
+    }
+
+    .header-text h3{
+        min-width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .nav-list a {
+        font-size: 1.1rem;  
+    }
+
+    .skill-desc p {
+        font-size: 1.2rem;
+    }
+
+    .skill-desc h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    html {
+        font-size: 9px;
+    }
+
+    .header-text {
+        margin: 2.5em 0;
+    }
+
+    .header-text h3 {
+        display: none;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+     .nav-list a {
+         font-size: 1.2rem;
+         padding: 0.4em;
+     }
+
+    .logo {
+        font-size: 4rem;
+        margin-bottom: 0.7em;
+    }
+
+    .nav-list li:first-child a {
+        padding-left: 0;
+    }
+
+    .our-offer {
+        flex-direction: column;
+    }
+
+    .skill {
+        margin-bottom: 2em;
+        width: 100%;
+    }
+
+    .skill-desc h3 {
+        font-size: 2.5rem;
+        margin: 1em 0;
+    }
+
+    .skill-desc p {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .our-offer img {
+        max-width: 120px;
+    }
+}
+
