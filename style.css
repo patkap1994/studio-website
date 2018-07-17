@@ -17,17 +17,13 @@ html, body {
     height: 100%;
 }
 
-.italic-text {
-    font-size: 1.2rem;
-    font-weight: 400;
+.italic-font {
     font-style: italic;
 }
 
 .title-font {
     font-family: var(--nunito);
-    font-size: 2.8rem;
     text-transform: uppercase;
-    font-weight: 400;
 }
 
 /* BUTTONS */
@@ -37,8 +33,8 @@ html, body {
     color: white;
     display: block;
     font-family: var(--nunito);
-    font-size: 0.9rem;
-    padding: 1em 3em;
+    font-size: 0.8rem;
+    padding: 1.6em 4.5em;
     text-decoration: none;
     position: relative;
     z-index: 999;
@@ -75,25 +71,25 @@ header {
     color: white;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding-bottom: 2em;
+    height: auto;
     width: 100%;
 }
 
 nav {
-    margin-top: 2em;
     align-items: center;
     display: flex;
     font-family: var(--nunito);
+    font-size: 1rem;
     justify-content: space-between;
-    padding: 0 4em;
+    margin-top: 2em;
+    padding: 0 3.5em;
     width: 100%;
 }
 
 .logo {
     display: inline-block;
     color: #fff;
-    font-size: 3.1rem;
+    font-size: 3em;
     font-weight: 500;
     text-decoration: none;
 }
@@ -105,67 +101,102 @@ nav {
 
 .nav-list a {
     color: #fff;
-    font-size: 1rem;
     padding-left: 1.6em;
     text-decoration: none;
 }
 
 .header-text {
-    margin: 6em 3em 3em 3em;
-    max-width: 600px;
+    margin: 2em 1em;
+    font-size: 2rem;
+    max-width: 850px;
     text-align: center;
 }
 
 .header-text h1 {
     font-family: var(--nunito);
-    font-size: 4rem;
     font-weight: 600;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.45em;
+    line-height: 1.2em;
 }
 
 .header-text h3 {
     display: inline-block;
     font-family: var(--open-sans);
-    font-size: 0.8rem;
+    font-size: 0.45em;
     font-style: italic;
     font-weight: 300;
-    max-width: 80%;
+    max-width: 730px;
 }
 
 .scroll-icon {
-    height: 30px;
-    margin-top: 3em;
-    width: 30px;
+    margin: 4em 0;
+    height: 35px;
+    width: 20px;
+}
+
+@media screen and (max-width: 820px) {
+    html {
+        font-size: 12px;
+    }
+
+    .header-text h3 {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 11px;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 4rem;
+        margin-bottom: 0.8em;
+    }
+
+    .header-text h1 {
+        font-size: 3.5rem;
+    }
 }
 
 /* WHAT WE DO SECTION */
 .our-offer {
     display: flex;
     margin: 0 auto;
-    padding: 2em 0 6em 0;
-    max-width: 1000px;
+    padding: 1.8em 11em 6.5em 11em;
+    justify-content: space-between;
 }
 
 .skill {
     display: flex;
+    width: 30%;
 }
 
 .our-offer img {
-    max-width: 150px;
-    padding: 0 2em;
+    padding-right: 4em;
+    width: 44%;
+}
+
+.skill-desc {
+    width: 56%;
 }
 
 .skill-desc h3 {
     font-family: var(--nunito);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
     white-space: nowrap;
 }
 
 .skill-desc p {
+    color: #95989A;
     font-family: var(--open-sans);
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 
@@ -180,7 +211,7 @@ nav {
 }
 
 .about-us-desc {
-    padding: 2em 5em 2em 5em;
+    padding: 0 5em 1em 3em;
     float: right;
     width: 50%;
 }
@@ -190,7 +221,9 @@ nav {
 }
 
 .about-us-desc h6 {
-    margin-bottom: 1em;
+    font-size: 0.9rem;
+    margin-bottom: 1.3em;
+    color: #95989A;
 }
 
 .about-us-desc h6::before {
@@ -205,12 +238,14 @@ nav {
 }
 
 .about-us-desc h3 {
-    margin-bottom: 0.5em;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.9em;
 }
 
 .about-us-paragraph {
-    font-size: 0.8rem;
-    margin-bottom: 0.8em;
+    color: #95989A;
+    margin-bottom: 1.5em;
 }
 
 .our-skills {
@@ -218,8 +253,9 @@ nav {
 }
 
 .our-skills h4 {
-    font-size: 1.2rem;
-    margin: 1em 0;
+    color: #95989A;
+    font-size: 1.25rem;
+    margin-bottom: 1.8em;
     font-weight: 400;
 }
 
@@ -228,6 +264,14 @@ nav {
     justify-content: space-between;
     position: relative;
     margin-bottom: 1em;
+}
+
+.skill-o-meter > p:first-of-type {
+    font-weight: 900;
+}
+
+.skill-o-meter > p:nth-of-type(2) {
+    color: #95989A;
 }
 
 .skill-o-meter:nth-child(2) {
@@ -249,7 +293,7 @@ nav {
 .skill-o-meter::before {
     content: "";
     display: block;
-    background: linear-gradient(to right, #00FFBA, #8A0BDB);
+    background: linear-gradient(to right, #8A0BDB, #00FFBA);
     height: 4px;
     width: 100%;
     position: absolute;
@@ -259,145 +303,4 @@ nav {
 
 
 
-
-
-
-
-
-
-
-
-
-/* ANIMATIONS */
-
-
-
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 1030px) {
-    .our-offer {
-        justify-content: space-around;
-    }
-
-    .skill {
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        width: 25%;
-    }
-
-    .skill-desc h3 {
-        text-align: center;
-    }
-
-    .our-offer img {
-        margin-bottom: 1em;
-    }
-}
-
-@media screen and (max-width: 850px){
-    html{
-        font-size: 13px;
-    }
-
-    .header-text h3 {
-        font-size: 1rem;
-        min-width: 80%;
-    }
-
-    .skill-desc p {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 670px){
-    html{
-        font-size: 10px;
-    }
-
-    .header-text {
-        width: 65%;
-    }
-
-    .header-text h3{
-        min-width: 100%;
-        font-size: 1.1rem;
-    }
-
-    .btn {
-        font-size: 1rem;
-    }
-
-    .nav-list a {
-        font-size: 1.1rem;  
-    }
-
-    .skill-desc p {
-        font-size: 1.2rem;
-    }
-
-    .skill-desc h3 {
-        font-size: 1.8rem;
-    }
-}
-
-@media screen and (max-width: 560px) {
-    html {
-        font-size: 9px;
-    }
-
-    .header-text {
-        margin: 2.5em 0;
-    }
-
-    .header-text h3 {
-        display: none;
-    }
-
-    .btn {
-        font-size: 1.1rem;
-    }
-
-    nav {
-        flex-direction: column;
-        padding: 0;
-    }
-
-     .nav-list a {
-         font-size: 1.2rem;
-         padding: 0.4em;
-     }
-
-    .logo {
-        font-size: 4rem;
-        margin-bottom: 0.7em;
-    }
-
-    .nav-list li:first-child a {
-        padding-left: 0;
-    }
-
-    .our-offer {
-        flex-direction: column;
-    }
-
-    .skill {
-        margin-bottom: 2em;
-        width: 100%;
-    }
-
-    .skill-desc h3 {
-        font-size: 2.5rem;
-        margin: 1em 0;
-    }
-
-    .skill-desc p {
-        width: 60%;
-        margin: 0 auto;
-    }
-
-    .our-offer img {
-        max-width: 120px;
-    }
-}
 
