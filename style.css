@@ -17,8 +17,11 @@ html, body {
     height: 100%;
 }
 
+/* TYPOGRAPHY */
+
 .italic-font {
     font-style: italic;
+    font-weight: 400;
 }
 
 .title-font {
@@ -139,27 +142,71 @@ nav {
         font-size: 12px;
     }
 
+    .header-text {
+        margin-top: 3em;
+    }
+
     .header-text h3 {
-        width: 70%;
+        width: 80%;
+        font-size: 1.1rem;
     }
 }
 
 @media screen and (max-width: 600px) {
-    html {
-        font-size: 11px;
+    .hamburger-icon {
+        cursor: pointer;
+        height: 12px;
+        margin-top: -2px;
     }
-    
-    nav {
-        flex-direction: column;
+
+    .hamburger-menu {
+        width: 30px;
+        height: 2px;
+        background: white;
+        position: relative;
+    }
+
+    .hamburger-menu::before,
+    .hamburger-menu::after {
+        display: block;
+        content: "";
+        background: white;
+        height: 2px;
+        width: 30px;
+        position: absolute;
+    }
+
+    .hamburger-menu::before {
+        top: 6px;
+    }
+
+    .hamburger-menu::after {
+        top: 12px;
     }
 
     .logo {
         font-size: 4rem;
-        margin-bottom: 0.8em;
+    }
+    
+    .nav-list {
+        display: none;
+    }
+
+    .header-text {
+        width: 95%;
     }
 
     .header-text h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+
+    .header-text h3 {
+        font-size: 1.1rem;
+        width: 90%;
+    }
+
+    .btn {
+        font-size: 1rem;
     }
 }
 
@@ -199,6 +246,47 @@ nav {
     font-size: 1rem;
 }
 
+@media screen and (max-width: 1200px) {
+    .our-offer {
+        padding: 2em 0 4em 0;
+        width: 80%;
+    }
+
+    .skill {
+        flex-direction: column;
+    }
+
+    .our-offer img {
+        height: 80px;
+        margin: 1em auto;
+        padding: 0;
+    }
+
+    .skill-desc {
+        width: 100%;
+    }
+
+    .skill-desc h3 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .our-offer {
+        flex-direction: column;
+        padding: 0 0 3em 0;
+    }
+
+    .skill {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .our-offer img {
+        padding: 0;
+        height: 80px;
+    }
+}
 
 /* ABOUT US */
 .about-us {
@@ -246,6 +334,7 @@ nav {
 .about-us-paragraph {
     color: #95989A;
     margin-bottom: 1.5em;
+    font-size: 1rem;
 }
 
 .our-skills {
@@ -298,6 +387,61 @@ nav {
     width: 100%;
     position: absolute;
     top: -5px;
+}
+
+@media screen and (max-width: 1310px) {
+    .about-us img {
+        display: none;
+    }
+
+    .about-us-desc h6 {
+        display: none;
+    }
+
+    .about-us-desc h3 {
+        text-align: center;
+    }
+
+    .about-us {
+        width: 80%;
+        margin: 0 auto;
+        overflow: auto;
+    }
+
+    .about-us-desc {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-us-paragraph:nth-of-type(1) {
+        float: left;
+        width: 48%;
+    }
+
+    .about-us-paragraph:nth-of-type(2) {
+        float: right;
+        width: 48%;
+    }
+
+    .our-skills {
+        width: 100%;
+    }
+
+    .our-skills h4 {
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about-us-paragraph:nth-of-type(1),
+    .about-us-paragraph:nth-of-type(2) {
+        float: none;
+        width: 100%;
+    }
+
+    .about-us {
+        width: 80%;
+    }
 }
 
 
