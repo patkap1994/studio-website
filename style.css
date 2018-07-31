@@ -66,7 +66,9 @@ img {
 
 /* BUTTONS */
 
-.btn {
+.btn,
+.btn:active,
+.btn:focus {
     background: linear-gradient(to right, #00FFBA, #8A0BDB);
     border-radius: 50px;
     color: white;
@@ -92,19 +94,21 @@ img {
     z-index: -1;
 }
 
-.btn:hover,
-.btn:focus {
+.btn:hover {
     background: #fff;
     color: #8A0BDB;
 }
 
-.btn:hover::before,
-.btn:focus::before {
+.btn:hover::before {
     background: #fff;
 }
 
 .btn-black {
     margin-top: 3em;
+}
+
+.btn-black-invisible {
+    display: none;
 }
 
 .btn-black:hover {
@@ -329,7 +333,9 @@ nav {
     -o-transition: opacity 0.5s ease-in-out;
 }
 
-.project:hover figcaption {
+.project:hover figcaption,
+.project:focus figcaption,
+.project:active figcaption {
     opacity: 1;
 }
 
@@ -362,6 +368,282 @@ nav {
 
 .project a:hover::after {
     width: 100%;
+}
+
+/* QUOTES SECTION */
+
+.quotes {
+    background: url('img/workplace.jpg');
+    background-position: left center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.quote-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 90%;
+    position: relative;
+    height: auto;
+    padding: 10em 0;
+}
+
+.quote-container {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    width: 50%;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.quote {
+    font-style: italic;
+    margin-top: 2em;
+}
+
+.name {
+    font-size: 1.3rem;
+    padding-top: 5px;
+}
+
+.face-photo {
+    background: white;
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 1em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.quote-container-active {
+    opacity: 1;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 10%;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border: solid 1px white;
+    margin-bottom: 0.8em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot:hover,
+.dot.active-dot {
+    background: #0BDBA3;
+}
+
+/* BUY NOW SECTION */
+
+.buy-now-table {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3em 0;
+}
+
+.buy-now-container {
+    flex-basis: 25%;
+    border: 3px solid #8A0BDB;
+    text-align: center;
+    padding: 5em 0;
+    margin: 0 8px;
+}
+
+.buy-now-container:hover {
+    background: linear-gradient(to bottom, #00FFBA, #8A0BDB);
+    border: transparent;
+}
+
+.buy-now-container:hover *:not(.btn) {
+    color: white;
+}
+
+.buy-now-title {
+    color: #8A0BDB;
+    margin-bottom: 0.5em;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8A0BDB;
+}
+
+.buy-now-offer {
+    list-style-type: none;
+    margin: 1em 0;
+    line-height: 2em;
+}
+
+.buy-now-btn {
+    display: inline-block;
+    margin-top: 2em;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    background: url("img/golden-gate-bridge.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5em 0;
+}
+
+.contact-container {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.contact-container h3 {
+    text-transform: none;
+    color: white;
+    white-space: pre-wrap;
+}
+
+.social-icons {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+}
+
+.form-name,
+.form-mail {
+    padding: 1em;
+    margin-right: 1em;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.form-name,
+.form-mail,
+.btn-subscribe {
+    box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form-name {
+    width: 25%;
+}
+
+.form-mail {
+    width: 50%;
+}
+
+.btn-subscribe {
+    padding: 1em;
+    width: 25%;
+    color: white;
+    text-transform: uppercase;
+    background: #0BDBA3;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-subscribe:hover {
+    background: #07A87D;
+}
+
+.fa {
+    color: #95989A;
+    text-decoration: none;
+    padding: 0.4em 0.5em;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 0 0.2em;
+}
+
+.fa-facebook {
+    padding: 0.4em 0.6em;
+}
+
+.fa:hover {
+    color: #fff;
+}
+
+.fa-facebook:hover {
+    background: #4267B2;
+}
+
+.fa-youtube:hover {
+    background: #FF0000;
+}
+
+.fa-instagram:hover {
+    background: #D82D77;
+}
+
+.fa-twitter:hover {
+    background: #1DA1F2;
+}
+
+.fa-linkedin:hover {
+    background: #0077B5;
+}
+
+/* FOOTER SECTION */
+
+footer {
+    background: #000;
+    padding: 3em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.footer-list a {
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0.2em;
+    color: #fff;
 }
 
 /* ANIMATIONS */
@@ -577,6 +859,73 @@ nav {
     }
     .project figcaption {
         width: 90%;
+    }
+    .project:nth-child(4),
+    .project:nth-child(5),
+    .project:nth-child(6) {
+        display: none;
+    }
+    .portfolio-container.show-portfolio .project:nth-child(4),
+    .portfolio-container.show-portfolio .project:nth-child(5),
+    .portfolio-container.show-portfolio .project:nth-child(6) {
+        display: flex;
+    }
+    .btn-black {
+        display: block;
+    }
+    .quotes {
+        flex-direction: column;
+    }
+    .quote-container {
+        width: 80%;
+    }
+    .dots {
+        flex-direction: row;
+        padding-bottom: 2em;
+    }
+    .dot {
+        margin: 0;
+        margin-right: 0.8em;
+    }
+    .buy-now-table {
+        flex-direction: column;
+        width: 60%;
+        min-width: 250px;
+    }
+    .buy-now-container {
+        padding: 2em;
+        margin: 8px 0;
+    }
+    .buy-now-btn {
+        margin-bottom: 0;
+    }
+    .btn-black {
+        margin-bottom: 1em;
+    }
+    .contact-container {
+        width: 80%;
+    }
+    .contact-form {
+        flex-direction: column;
+    }
+    .contact-form input:not(.btn-subscribe) {
+        width: 100%;
+        margin: 0.5em;
+    }
+    .btn-subscribe {
+        display: inline-block;
+        width: 50%;
+        margin: 0.5em auto;
+    }
+    .social-icons {
+        flex-wrap: wrap;
+    }
+    .footer-list {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-list li {
+        margin: 0.5em;
     }
 }
 
