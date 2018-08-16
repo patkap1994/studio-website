@@ -9,80 +9,82 @@ const hamburgerMenu = document.querySelector(".hamburger-menu");
 const hamburgerMenuButton = document.querySelector(".hamburger-icon");
 
 function toggleNav() {
-    let navList = document.querySelector(".nav-list");
+  let navList = document.querySelector(".nav-list");
 
-    if (toggleNavStatus === false) {
-        navList.style.height = "100%";
+  if (toggleNavStatus === false) {
+    navList.style.height = "100%";
 
-        toggleNavStatus = true;
-    } else {
-        navList.style.height = "0";
+    toggleNavStatus = true;
+  } else {
+    navList.style.height = "0";
 
-        toggleNavStatus = false;
-    }
+    toggleNavStatus = false;
+  }
 
-    //Toggle hamburger menu icon
+  //Toggle hamburger menu icon
 
-    hamburgerMenuButton.classList.toggle("active");
+  hamburgerMenuButton.classList.toggle("active");
 }
 
 //Listen for clicking on hamburger menu icon and if it is clicked run toggleNav function
 
 hamburgerMenu.addEventListener("click", toggleNav);
 
-
 //##############################################################################################
 //"Show more" button for showing more portfolio projects
 //##############################################################################################
 
-const showMoreButton = document.querySelector('.btn.btn-black.btn-black-invisible');
-const portfolioContainer = document.querySelector('.portfolio-container');
+const showMoreButton = document.querySelector(
+  ".btn.btn-black.btn-black-invisible"
+);
+const portfolioContainer = document.querySelector(".portfolio-container");
 
 let showFullPortfolio = false;
 
-showMoreButton.addEventListener('click', toggleFullPortfolio);
+showMoreButton.addEventListener("click", toggleFullPortfolio);
 
 function toggleFullPortfolio(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!showFullPortfolio) {
-        portfolioContainer.classList.add('show-portfolio');
+  if (!showFullPortfolio) {
+    portfolioContainer.classList.add("show-portfolio");
 
-        showMoreButton.innerText = 'Show less';
+    showMoreButton.innerText = "Show less";
 
-        showFullPortfolio = true;
-    } else {
-        portfolioContainer.classList.remove('show-portfolio');
+    showFullPortfolio = true;
+  } else {
+    portfolioContainer.classList.remove("show-portfolio");
 
-        showMoreButton.innerText = 'Load more';
+    showMoreButton.innerText = "Load more";
 
-        showFullPortfolio = false;
-    }
+    showFullPortfolio = false;
+  }
 }
-
 
 //##############################################################################################
 //Changing quotes in quote section
 //##############################################################################################
 
-const quoteContainers = document.querySelectorAll('.quote-container');
-const dots = document.querySelectorAll('.dot');
+const quoteContainers = document.querySelectorAll(".quote-container");
+const dots = document.querySelectorAll(".dot");
 
 for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener('click', changeQuote);
+  dots[i].addEventListener("click", changeQuote);
 }
 
 function changeQuote() {
-    clearInterval(changeQuoteContainer);
+  clearInterval(changeQuoteContainer);
 
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove('active-dot');
-        quoteContainers[i].classList.remove('quote-container-active');
-    }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active-dot");
+    quoteContainers[i].classList.remove("quote-container-active");
+  }
 
-    this.classList.add('active-dot');
+  this.classList.add("active-dot");
 
-    quoteContainers[this.dataset.number - 1].classList.add('quote-container-active');
+  quoteContainers[this.dataset.number - 1].classList.add(
+    "quote-container-active"
+  );
 }
 
 //##############################################################################################
@@ -94,17 +96,87 @@ let actualQuote = 1;
 let changeQuoteContainer = setInterval(changeQuoteTiming, 6000);
 
 function changeQuoteTiming() {
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove('active-dot');
-        quoteContainers[i].classList.remove('quote-container-active');
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active-dot");
+    quoteContainers[i].classList.remove("quote-container-active");
+  }
+
+  dots[actualQuote].classList.add("active-dot");
+  quoteContainers[actualQuote].classList.add("quote-container-active");
+
+  //Increase the array number of actually visible quote
+  actualQuote += 1;
+
+  //Check if this is the last quote in the collection and if it is then show first quote
+  actualQuote == 4 ? (actualQuote = 0) : null;
+}
+
+//##############################################################################################
+//Changing width of skill meters to 100% when the section is visible
+//##############################################################################################
+
+window.addEventListener("scroll", fullWidth);
+
+function fullWidth() {
+  let skillMeters = document.querySelector(".our-skills");
+  let skillIndicator = document.querySelectorAll(".skill-o-meter");
+
+  if (window.scrollY + window.innerHeight >= skillMeters.offsetTop + 100) {
+    for (let i = 0; i < skillIndicator.length; i++) {
+      skillIndicator[i].classList.add("active");
     }
+  }
+}
 
-    dots[actualQuote].classList.add('active-dot');
-    quoteContainers[actualQuote].classList.add('quote-container-active');
+//##############################################################################################
+//Show header text on load
+//##############################################################################################
 
-    //Increase the array number of actually visible quote
-    actualQuote += 1;
+let headerBig = document.querySelector(".hero-text h1");
+let headerSmall = document.querySelector(".hero-text h3");
 
-    //Check if this is the last quote in the collection and if it is then show first quote
-    actualQuote == 4 ? actualQuote = 0 : null;
+window.addEventListener("load", showText);
+
+function showText() {
+  headerBig.classList.add("show");
+  headerSmall.classList.add("show");
+}
+
+//##############################################################################################
+//Parallax
+//##############################################################################################
+
+/* window.addEventListener('scroll', headerParallax);
+
+function headerParallax() {
+    let header = document.getElementsByTagName('header');
+
+    header[0].style.backgroundPositionY = window.scrollY * 0.15 + 'px';
+} */
+
+//##############################################################################################
+//ScrollTo Section
+//##############################################################################################
+
+let links = document.querySelectorAll(".nav-list a");
+let sections = {
+  "About us": ".about-us",
+  "Our work": ".portfolio",
+  Expertise: ".quotes",
+  Price: ".buy-now",
+  Contact: ".contact"
+};
+
+for (let i of links) {
+  i.addEventListener("click", goToSection);
+}
+
+function goToSection(e) {
+  e.preventDefault();
+
+  let section = document.querySelector(sections[this.innerText]);
+
+  let sectionTop = section.offsetTop;
+
+  $("html, body").animate({ scrollTop: sectionTop }, 1200);
 }
