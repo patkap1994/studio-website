@@ -34,9 +34,7 @@ hamburgerMenu.addEventListener("click", toggleNav);
 //"Show more" button for showing more portfolio projects
 //##############################################################################################
 
-const showMoreButton = document.querySelector(
-  ".btn.btn-black.btn-black-invisible"
-);
+const showMoreButton = document.querySelector(".btn.btn-black.btn-black-invisible");
 const portfolioContainer = document.querySelector(".portfolio-container");
 
 let showFullPortfolio = false;
@@ -121,6 +119,7 @@ function fullWidth() {
   let skillMeters = document.querySelector(".our-skills");
   let skillIndicator = document.querySelectorAll(".skill-o-meter");
 
+
   if (window.scrollY + window.innerHeight >= skillMeters.offsetTop + 100) {
     for (let i = 0; i < skillIndicator.length; i++) {
       skillIndicator[i].classList.add("active");
@@ -129,54 +128,70 @@ function fullWidth() {
 }
 
 //##############################################################################################
-//Show header text on load
+//Show header and button on load
 //##############################################################################################
 
 let headerBig = document.querySelector(".hero-text h1");
 let headerSmall = document.querySelector(".hero-text h3");
+let btn = document.querySelectorAll('.btn')[0];
 
 window.addEventListener("load", showText);
 
 function showText() {
   headerBig.classList.add("show");
   headerSmall.classList.add("show");
+  btn.classList.add("show");
 }
-
-//##############################################################################################
-//Parallax
-//##############################################################################################
-
-/* window.addEventListener('scroll', headerParallax);
-
-function headerParallax() {
-    let header = document.getElementsByTagName('header');
-
-    header[0].style.backgroundPositionY = window.scrollY * 0.15 + 'px';
-} */
 
 //##############################################################################################
 //ScrollTo Section
 //##############################################################################################
 
 let links = document.querySelectorAll(".nav-list a");
+let footerLinks = document.querySelectorAll(".footer-list a");
+
 let sections = {
-  "About us": ".about-us",
-  "Our work": ".portfolio",
-  Expertise: ".quotes",
-  Price: ".buy-now",
-  Contact: ".contact"
+  "ABOUT US": ".about-us",
+  "OUR WORK": ".portfolio",
+  EXPERTISE: ".quotes",
+  PRICE: ".buy-now",
+  CONTACT: ".contact"
 };
 
-for (let i of links) {
-  i.addEventListener("click", goToSection);
+for (let i = 1; i < links.length; i++) {
+  links[i].addEventListener("click", goToSection);
+  footerLinks[i].addEventListener("click", goToSection);
 }
 
 function goToSection(e) {
   e.preventDefault();
 
-  let section = document.querySelector(sections[this.innerText]);
+  let sectionUpper = this.innerText.toUpperCase();
+
+  let section = document.querySelector(sections[sectionUpper]);
 
   let sectionTop = section.offsetTop;
 
-  $("html, body").animate({ scrollTop: sectionTop }, 1200);
+  //ScrollTop with jQuery
+
+  $("html, body").animate({
+    scrollTop: sectionTop
+  }, 1200);
+}
+
+//##############################################################################################
+//Showing images on scroll
+//##############################################################################################
+
+window.addEventListener('scroll', showImg);
+
+function showImg() {
+  let offerImg = document.querySelectorAll('.skill img');
+
+  if (window.scrollY + window.innerHeight >= offerImg[0].offsetTop + 50) {
+    for (let i = 0; i < offerImg.length; i++) {
+      offerImg[i].classList.add("translate");
+    }
+  }
+
 }
