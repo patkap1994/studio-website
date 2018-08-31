@@ -133,7 +133,7 @@ function fullWidth() {
 
 let headerBig = document.querySelector(".hero-text h1");
 let headerSmall = document.querySelector(".hero-text h3");
-let btn = document.querySelectorAll('.btn')[0];
+let btn = document.querySelectorAll(".btn")[0];
 
 window.addEventListener("load", showText);
 
@@ -183,14 +183,15 @@ function goToSection(e) {
 //Showing images on scroll
 //##############################################################################################
 
-window.addEventListener('scroll', showImg);
+window.addEventListener("scroll", showImg);
 
 function showImg() {
-  let offerImg = document.querySelectorAll('.skill img');
+  let offerImg = document.querySelectorAll(".skill img");
 
-  if (window.scrollY + window.innerHeight >= offerImg[0].offsetTop + 50) {
-    for (let i = 0; i < offerImg.length; i++) {
+  for (let i = 0; i < offerImg.length; i++) {
+    if (window.scrollY + window.innerHeight >= offerImg[i].offsetTop) {
       offerImg[i].classList.add("translate");
+
     }
   }
 

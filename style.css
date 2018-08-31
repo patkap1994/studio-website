@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito|Open+Sans&subset=latin-ext");
+
 :root {
     --nunito: "Nunito", sans-serif;
     --open-sans: "Open Sans", sans-serif;
 }
 
 /* GLOBAL */
-
 *,
 *::before,
 *::after {
@@ -27,7 +27,6 @@ img {
 }
 
 /* TYPOGRAPHY */
-
 .italic-font {
     font-style: italic;
     font-weight: 400;
@@ -65,7 +64,6 @@ img {
 }
 
 /* BUTTONS */
-
 .btn,
 .btn:active,
 .btn:focus {
@@ -134,7 +132,6 @@ header .btn {
 }
 
 /* HEADER */
-
 header {
     align-items: center;
     background: url("img/bridge.jpg");
@@ -215,12 +212,15 @@ nav {
     font-style: italic;
     font-weight: 300;
     width: 90%;
-    opacity: 0;
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
     -moz-transform: translateY(100%);
     -ms-transform: translateY(100%);
     -o-transform: translateY(100%);
+}
+
+.hero-text span {
+    opacity: 0;
 }
 
 .hero-text h1.show {
@@ -233,17 +233,25 @@ nav {
 }
 
 .hero-text h3.show {
-    opacity: 1;
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
     -ms-transform: translateX(0%);
     -o-transform: translateX(0%);
-    transition: all 1s 0.2s ease-in-out;
-    -webkit-transition: all 1s 0.2s ease-in-out;
-    -moz-transition: all 1s 0.2s ease-in-out;
-    -ms-transition: all 1s 0.2s ease-in-out;
-    -o-transition: all 1s 0.2s ease-in-out;
+    transition: transform 1s 0.2s ease-in-out;
+    -webkit-transition: transform 1s 0.2s ease-in-out;
+    -moz-transition: transform 1s 0.2s ease-in-out;
+    -ms-transition: transform 1s 0.2s ease-in-out;
+    -o-transition: transform 1s 0.2s ease-in-out;
+}
+
+.hero-text h3.show span {
+    opacity: 1;
+    transition: opacity 1s 0.2s ease-in-out;
+    -webkit-transition: opacity 1s 0.2s ease-in-out;
+    -moz-transition: opacity 1s 0.2s ease-in-out;
+    -ms-transition: opacity 1s 0.2s ease-in-out;
+    -o-transition: opacity 1s 0.2s ease-in-out;
 }
 
 .scroll-icon {
@@ -256,7 +264,6 @@ nav {
 }
 
 /* WHAT WE DO SECTION */
-
 .our-offer {
     display: flex;
     margin: 0 auto;
@@ -318,7 +325,6 @@ nav {
 }
 
 /* ABOUT US */
-
 .about-us img {
     display: inline-block;
     width: 50%;
@@ -393,7 +399,6 @@ nav {
 }
 
 /* PORTFOLIO SECTION */
-
 .portfolio {
     display: flex;
     align-items: center;
@@ -481,7 +486,6 @@ nav {
 }
 
 /* QUOTES SECTION */
-
 .quotes {
     background: url("img/workplace.jpg");
     background-position: left center;
@@ -524,7 +528,9 @@ nav {
 }
 
 .face-photo {
-    background: white;
+    background: url(img/face.jpeg);
+    background-size: cover;
+    background-position: center;
     width: 60px;
     height: 60px;
     float: left;
@@ -567,7 +573,6 @@ nav {
 }
 
 /* BUY NOW SECTION */
-
 .buy-now-table {
     margin: 0 auto;
     display: flex;
@@ -628,7 +633,6 @@ nav {
 }
 
 /* CONTACT SECTION */
-
 .contact {
     background: url("img/golden-gate-bridge.jpg");
     background-size: cover;
@@ -750,7 +754,6 @@ nav {
 }
 
 /* FOOTER SECTION */
-
 footer {
     background: #000;
     padding: 3em 0;
@@ -775,79 +778,95 @@ footer {
 }
 
 /* ANIMATIONS */
-
 @keyframes scrollMove {
     0% {
         top: 0;
     }
+
     50% {
         top: 8px;
     }
+
     100% {
         top: 0;
     }
 }
 
 /* MEDIA QUERIES */
-
 @media screen and (max-width: 80rem) {
     .about-us img {
         display: none;
     }
+
     .about-us-desc h6 {
         display: none;
     }
+
     .about-title {
         text-align: center;
     }
+
     .about-us {
         width: 80%;
         margin: 0 auto;
         overflow: auto;
     }
+
     .about-us-desc {
         width: 100%;
         padding: 0;
     }
+
     .about-us-text:nth-of-type(1) {
         float: left;
         width: 48%;
     }
+
     .about-us-text:nth-of-type(2) {
         float: right;
         width: 48%;
     }
+
     .our-skills {
         width: 100%;
     }
+
     .our-skills h4 {
         clear: both;
     }
+
     .our-offer {
         padding: 4em 0;
         width: 80%;
     }
+
     .skill {
         flex-direction: column;
     }
+
     .our-offer img {
         height: 80px;
         margin: 1em auto;
         padding: 0;
     }
+
     .skill-desc {
         width: 100%;
     }
+
     .skill-title {
         text-align: center;
     }
+
     .project {
         flex-basis: 45%;
     }
+
     .project figcaption {
         width: 80%;
         max-width: 405px;
     }
+
     .portfolio h6 {
         display: none;
     }
@@ -862,6 +881,7 @@ footer {
         width: 30px;
         z-index: 10000;
     }
+
     .hamburger-icon {
         width: 30px;
         height: 2px;
@@ -874,6 +894,7 @@ footer {
         -ms-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
     }
+
     .hamburger-icon::before,
     .hamburger-icon::after {
         display: block;
@@ -888,15 +909,19 @@ footer {
         -ms-transition: all 0.5s ease-in-out;
         -o-transition: all 0.5s ease-in-out;
     }
+
     .hamburger-icon::before {
         top: -6px;
     }
+
     .hamburger-icon::after {
         top: 6px;
     }
+
     .hamburger-icon.active {
         background: transparent;
     }
+
     .hamburger-icon.active::before {
         top: 0;
         transform: rotate(45deg);
@@ -905,6 +930,7 @@ footer {
         -ms-transform: rotate(45deg);
         -o-transform: rotate(45deg);
     }
+
     .hamburger-icon.active::after {
         top: 0;
         transform: rotate(135deg);
@@ -913,19 +939,24 @@ footer {
         -ms-transform: rotate(135deg);
         -o-transform: rotate(135deg);
     }
+
     nav {
         position: static;
     }
+
     header {
         position: relative;
     }
+
     .btn {
         font-size: 0.65rem;
         margin-bottom: 7em;
     }
+
     .scroll-icon {
         display: none;
     }
+
     .nav-list {
         display: flex;
         flex-direction: column;
@@ -946,114 +977,151 @@ footer {
         -ms-transition: height 1s ease-in-out;
         -o-transition: height 1s ease-in-out;
     }
+
     .nav-list a {
         display: inline-block;
         padding: 0;
         margin: 0.3em 0;
     }
+
     .hero-text {
         margin-top: 3em;
         font-size: 1.5rem;
     }
+
     .our-offer {
         flex-direction: column;
         margin: auto;
         padding: 0.5em 0;
     }
+
     .skill {
         width: 100%;
         margin: 1em auto;
     }
+
     .our-offer img {
         padding: 0;
         height: 80px;
     }
+
+    .our-offer .skill:nth-child(1) img.translate,
+    .our-offer .skill:nth-child(2) img.translate,
+    .our-offer .skill:nth-child(3) img.translate {
+        transition-delay: 0s;
+    }
+
     .about-us-text {
         float: none;
         width: 100%;
     }
+
     .about-us {
         width: 80%;
+        margin-top: 2.5em;
+        margin-bottom: 2.5em;
     }
+
     .about-us-text:nth-of-type(1),
     .about-us-text:nth-of-type(2) {
         float: none;
         width: 100%;
     }
+
     .portfolio {
         margin: 2em auto;
     }
+
     .project {
         flex-basis: 100%;
         max-width: 440px;
     }
+
     .project figcaption {
         width: 90%;
     }
+
     .project:nth-child(4),
     .project:nth-child(5),
     .project:nth-child(6) {
         display: none;
     }
+
     .portfolio-container.show-portfolio .project:nth-child(4),
     .portfolio-container.show-portfolio .project:nth-child(5),
     .portfolio-container.show-portfolio .project:nth-child(6) {
         display: flex;
     }
+
     .btn-black {
         display: block;
     }
+
     .quotes {
         flex-direction: column;
     }
+
     .quote-container {
         width: 80%;
     }
+
     .dots {
         flex-direction: row;
         padding-bottom: 2em;
     }
+
     .dot {
         margin: 0;
         margin-right: 0.8em;
     }
+
     .buy-now-table {
         flex-direction: column;
         width: 60%;
         min-width: 250px;
     }
+
     .buy-now-container {
         padding: 2em;
         margin: 8px 0;
     }
+
     .buy-now-btn {
         margin-bottom: 0;
     }
+
     .btn-black {
         margin-bottom: 1em;
     }
+
     .contact-container {
         width: 80%;
     }
+
     .contact-form {
         flex-direction: column;
     }
+
     .contact-form input:not(.btn-subscribe) {
         width: 100%;
         margin: 0.5em;
     }
+
     .btn-subscribe {
         display: inline-block;
         width: 50%;
         margin: 0.5em auto;
     }
+
     .social-icons {
         flex-wrap: wrap;
     }
+
     .footer-list {
         flex-direction: column;
         text-align: center;
     }
+
     .footer-list a {
         display: block;
         margin: 0.5em;
